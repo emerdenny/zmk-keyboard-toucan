@@ -117,6 +117,15 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+
+        vim_end: vim_end {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp G>
+                , <&kp UNDER>
+                ;
+        };
     };
 
     keymap {
