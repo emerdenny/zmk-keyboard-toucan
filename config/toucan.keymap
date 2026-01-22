@@ -61,6 +61,66 @@
         };
     };
 
+    macros {
+        cycle_wksp: cycle_wksp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
+        cycle_grp: cycle_grp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        cycle_web_tab: cycle_web_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        grp_tab: grp_tab {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LALT>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        wksp: wksp {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
