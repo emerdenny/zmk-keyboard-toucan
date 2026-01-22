@@ -13,7 +13,7 @@
 #define BASE 0
 #define NAV  1
 #define SYM  2
-#define ADJ  3
+#define ADJ  3  // TODO: still conditional below
 #define MED  4
 #define NUM  5
 #define MOU  6
@@ -132,9 +132,9 @@
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
      &kp BSPC      &hml LALT A   &hml LGUI S   &hml LCTRL D  &hml LSHFT F  &kp G           &kp H         &hmr RSHFT J  &hmr LCTRL K  &hmr LGUI L  &hmr LALT SEMI &kp SQT          
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
-     &kp TAB         &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp BSLH          
+     &kp TAB       &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp BSLH          
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
-                                              &tlt NUM TAB  &tlt NAV SPACE &tlt ADJ ESC   &tlt MED RET  &tlt SYM BSPC &tlt MOU DEL
+                                              &tlt ADJ TAB  &tlt NAV SPACE &tlt NUM BSPC   &tlt MED ESC  &tlt SYM RET  &tlt MOU DEL
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
