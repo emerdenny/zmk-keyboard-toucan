@@ -149,16 +149,25 @@
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
                                                &trans        &trans        &trans         &cycle_web_tab &cycle_grp    &cycle_wksp
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
-            >;                              // TODO: instead of cycle, lThumb indicates whether nav ops on wksp or group
+            >;                              // TODO: instead of cycle, lThumb indicates whether nav ops on wksp or group, arrow default
         };
 
         sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                /* &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC */
+                /* &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE */
+                /* &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE */
+                /*                           &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT */
+/* ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
+     &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans      
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans      
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans      
+/* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
+                                               &trans        &trans        &trans          &trans        &trans        &trans
+/*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
 
@@ -203,3 +212,13 @@
         };
     };
 };
+
+/* ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
+     /* &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans       */
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     /* &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans       */
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     /* &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans       */
+/* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
+                                               /* &trans        &trans        &trans          &trans        &trans        &trans */
+/*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
