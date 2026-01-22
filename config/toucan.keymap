@@ -14,7 +14,7 @@
 #define BASE 0
 #define NAV  1
 #define SYM  2
-#define ADJ  3  // TODO: still conditional below
+#define ADJ  3
 #define MED  4
 #define NUM  5
 #define MOU  6
@@ -159,7 +159,7 @@
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
                                                &trans        &trans        &trans         &cycle_web_tab &cycle_grp    &cycle_wksp
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
-            >;                              // TODO: instead of cycle, lThumb indicates whether nav ops on wksp or group, arrow default
+            >;
         };
 
         sym {
@@ -213,7 +213,7 @@
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
                                                &trans        &trans        &trans          &kp EQUAL     &kp MINUS     &kp N0
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
-            >;                              // TODO: need conditional layer triggered from num that has Fn keys
+            >;
         };
 
         mou {
