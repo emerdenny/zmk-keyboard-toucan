@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/behaviors.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
@@ -142,7 +143,7 @@
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
      &kp TAB       &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp BSLH          
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
-                                              &tlt MOU TAB  &tlt NAV SPACE &tlt NUM BSPC   &tlt MED RET  &tlt SYM ESC  &tlt ADJ DEL
+                                              &tlt MOU BSPC &tlt NAV SPACE &tlt NUM TAB    &tlt MED RET  &tlt SYM ESC  &tlt ADJ DEL
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
@@ -219,10 +220,18 @@
         mou {
             display-name = "MOU";
             bindings = <
-                &mo TAB   &trans &kp F7 &kp F8 &kp F9 &kp F12   &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP &trans &trans &kp BSPC
-                &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans
-                &bt LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans
-                                   &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT
+                /* TODO input-processor to adjust trackpad sensitivity? */
+                /* https://zmk.dev/docs/keymaps/behaviors/mouse-emulation#input-processors */
+
+/* ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
+     &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &mmv MOVE_UP  &trans        &trans        &trans      
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     &trans        &trans        &trans        &trans        &mkp LCLK     &mkp RCLK      &msc SCRL_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &trans      
+/* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
+     &trans        &trans        &trans        &trans        &trans        &trans        &msc SCRL_DOWN  &trans        &trans        &trans        &trans        &trans      
+/* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
+                                               &trans        &trans        &trans        &msc SCRL_LEFT &msc SCRL_RIGHT &trans
+/*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
     };
