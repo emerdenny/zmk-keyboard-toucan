@@ -236,9 +236,6 @@ MAKE_MACROTAP(previous_group_window_taphold, &kp, &previous_group_window)
         mou {
             display-name = "MOU";
             bindings = <
-                /* TODO input-processor to adjust trackpad sensitivity? */
-                /* https://zmk.dev/docs/keymaps/behaviors/mouse-emulation#input-processors */
-
 /* ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
      &trans        &trans        &trans        &trans        &trans        &trans          &trans        &trans        &mmv MOVE_UP  &trans        &trans        &trans      
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
