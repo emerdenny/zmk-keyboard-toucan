@@ -23,7 +23,7 @@
 
 #define MAKE_MACROTAP(NAME, HOLD_BEHAVIOR, MACRO)                                         \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD_BEHAVIOR>, <MACRO>; flavor = "tap-preferred";       \
-               tapping-term-ms = <200>;)                                       \
+               tapping-term-ms = <200>;)                                                  \
 
 ZMK_MACRO(last_workspace,
             bindings
@@ -32,10 +32,19 @@ ZMK_MACRO(last_workspace,
                 , <&macro_release &kp LGUI &kp LCTRL>
                 ;
 )
-
 MAKE_MACROTAP(lwksp, &kp, &last_workspace)
-
 #define LWKSP(KEYCODE) &lwksp KEYCODE 0
+
+ZMK_MACRO_ONE_PARAM(change_group_window, DIRECTION,
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp DIRECTION>
+                , <&macro_release &kp LGUI &kp LCTRL>
+                ;
+)
+MAKE_MACROTAP(chg_grp_wndw, &kp, &change_group_window)
+#define CGW(DIRECTION) &chg_grp_wndw RGUI DIRECTION
 
 
 / {
@@ -156,7 +165,7 @@ MAKE_MACROTAP(lwksp, &kp, &last_workspace)
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
      &soft_off     &trans        &trans        &trans        &trans        &trans          &grp_tab N1   &grp_tab N2   &grp_tab N3   &grp_tab N4   &grp_tab N5   &grp_tab N6
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
-                                               &trans        &trans        &trans          LWKSP(LSHFT)  &cycle_grp    &trans
+                                               &trans        &trans        &trans          LWKSP(RGUI)   CGW(LEFT)     CGW(RIGHT)
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
