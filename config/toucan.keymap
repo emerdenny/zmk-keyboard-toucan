@@ -102,13 +102,13 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
         };
     };
 
-    /* conditional_layers { */
-    /*     compatible = "zmk,conditional-layers"; */
-    /*     tri_layer { */
-    /*         if-layers = <1 2>; */
-    /*         then-layer = <3>; */
-    /*     }; */
-    /* }; */
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 
     macros {
         cycle_grp: cycle_grp {
