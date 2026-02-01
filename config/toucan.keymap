@@ -21,8 +21,8 @@
 #define NUM  5
 #define MOU  6
 
-ZMK_MACRO(shalt, bindings = <&macro_tap &kp RSHFT &kp RALT> ;)
-ZMK_MACRO(galt, bindings = <&macro_tap &kp RGUI &kp RALT> ;)
+ZMK_MACRO(shalt, bindings = <&macro_press &kp RSHFT &kp RALT> ;)
+ZMK_MACRO(galt, bindings = <&macro_press &kp RGUI &kp RALT> ;)
 
 ZMK_MACRO(mvscr,
             bindings
