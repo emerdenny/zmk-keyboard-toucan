@@ -43,7 +43,8 @@ ZMK_MACRO(last_workspace,
                 , <&macro_release &kp LGUI &kp LCTRL>
                 ;
 )
-MAKE_MACROTAP(lwksp, &galt, &last_workspace)
+MAKE_MACROTAP(gt_last_workspace, &galt, &last_workspace)
+#define LWKSP() &gt_last_workspace 0 0
 
 ZMK_MACRO(next_group_window,
             bindings
@@ -62,7 +63,8 @@ ZMK_MACRO(previous_group_window,
                 , <&macro_release &kp LGUI &kp LCTRL>
                 ;
 )
-MAKE_MACROTAP(pgw, &shalt, &previous_group_window)
+MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
+#define PGW() &previous_group_window_taphold 0 0
 
 
 / {
@@ -183,7 +185,7 @@ MAKE_MACROTAP(pgw, &shalt, &previous_group_window)
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
      &soft_off     &trans        &trans        &trans        &trans        &trans          &grp_tab N1   &grp_tab N2   &grp_tab N3   &grp_tab N4   &grp_tab N5   &grp_tab N6
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
-                                               &trans        &trans        &trans          &lwksp        NGW(RGUI)     &pgw
+                                               &trans        &trans        &trans          LWKSP()        NGW(RGUI)     PGW()
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
             >;
         };
