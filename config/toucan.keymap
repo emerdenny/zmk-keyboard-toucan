@@ -21,8 +21,8 @@
 #define NUM  5
 #define MOU  6
 
-ZMK_MACRO(shalt, bindings = <&macro_press &kp RSHFT &kp RALT> ;)
-ZMK_MACRO(galt, bindings = <&macro_press &kp RGUI &kp RALT> ;)
+ZMK_MACRO(shalt, bindings = <&macro_press &kp RSHFT &kp RALT>, <&macro_release &kp RSHFT &kp RALT> ;)
+ZMK_MACRO(galt, bindings = <&macro_press &kp RGUI &kp RALT>, <&macro_release &kp RGUI &kp RALT> ;)
 
 ZMK_MACRO(mvscr,
             bindings
@@ -102,24 +102,22 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    /* conditional_layers { */
+    /*     compatible = "zmk,conditional-layers"; */
+    /*     tri_layer { */
+    /*         if-layers = <1 2>; */
+    /*         then-layer = <3>; */
+    /*     }; */
+    /* }; */
 
     macros {
         cycle_grp: cycle_grp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_press &kp LALT>
+                = <&macro_press LGUI &kp LALT>
                 , <&macro_tap &kp TAB>
-                , <&macro_release &kp LGUI>
-                , <&macro_release &kp LALT>
+                , <&macro_release &kp LGUI &kp LALT>
                 ;
         };
 
@@ -127,12 +125,10 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_press &kp LALT>
+                = <&macro_press LGUI &kp LALT>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LGUI>
-                , <&macro_release &kp LALT>
+                , <&macro_release &kp LGUI &kp LALT>
                 ;
         };
 
@@ -150,10 +146,7 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
         vim_end: vim_end {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&kp G>
-                , <&kp UNDER>
-                ;
+            bindings = <&kp G >, <&kp UNDER>;
         };
     };
 
