@@ -121,14 +121,14 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
                 ;
         };
 
-        grp_tab: grp_tab {
+        focus: focus {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_press &kp LGUI &kp LALT>
+                = <&macro_press &kp LGUI>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LGUI &kp LALT>
+                , <&macro_release &kp LGUI>
                 ;
         };
 
@@ -176,7 +176,7 @@ MAKE_MACROTAP(previous_group_window_taphold, &shalt, &previous_group_window)
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
      &trans        &trans        &mvscr        &trans        &trans        &trans          &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans
 /* ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
-     &soft_off     &trans        &trans        &trans        &trans        &trans          &grp_tab N1   &grp_tab N2   &grp_tab N3   &grp_tab N4   &grp_tab N5   &grp_tab N6
+     &soft_off     &trans        &trans        &trans        &trans        &trans          &focus LEFT   &focus DOWN   &focus UP     &focus RIGHT  &trans        &trans
 /* ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┴─────────────╯ */
                                                &trans        &trans        &trans          LWKSP()        NGW(RGUI)     PGW()
 /*                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯ */
